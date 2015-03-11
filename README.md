@@ -28,6 +28,7 @@ headers: {
     ack: <true/false>
 }
 ```
+
 #### Sample Response
 ```
 200 OK
@@ -46,7 +47,6 @@ payload: {
         message
     }
 }
-
 ```
 
 ## PROPOSED. UNDER DEVELOPMENT.
