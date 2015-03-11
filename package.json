@@ -1,6 +1,6 @@
 {
-  "name": "Smart-Switching",
-  "version": "0.0.0",
+  "name": "Smart Outlet",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -12,6 +12,9 @@
     "express": "~4.12.2",
     "jade": "~1.9.2",
     "morgan": "~1.5.1",
-    "serve-favicon": "~2.2.0"
+    "serve-favicon": "~2.2.0",
+
+    "redis": "",
+    "node-mongo": ""
   }
 }
