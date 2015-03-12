@@ -3,7 +3,9 @@
 // Set up app and DB objects
 var express = require('express'),
     app = express(),
-    device = require('./model/device');
+    device = require('./model/device'),
+    util = require('./model/util'),
+    config = require('./model/config');
 
 
 app.get("/", function (request, response) {
@@ -14,11 +16,12 @@ app.get("/", function (request, response) {
 
 app.get("/_/msg", function (request, response) {
     "use strict";
+    console.log(util.hash.generate("test"));
     response.send("Recieve your outstanding messages from here.");
 });
 
 
-var server = app.listen(3000, function () {
+var server = app.listen(config.port, config.ip, function () {
     "use strict";
     var host = server.address().address,
         port = server.address().port;
