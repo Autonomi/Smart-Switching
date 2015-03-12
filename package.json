@@ -4,7 +4,9 @@
     "private": true,
 
     "dependencies": {
-        "express": ">= 4.4.4"
+        "express": ">= 4.4.4",
+        "mongodb": ">= 1.4.x",
+        "siphash": ">= 1.0.1"
     },
 
     "engines" : {
