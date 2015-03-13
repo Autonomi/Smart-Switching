@@ -6,7 +6,10 @@ var express = require('express'),
     device = require('./model/device'),
     util = require('./model/util'),
     database = require('./model/database'),
-    config = require('./config');
+    config = require('./config'),
+    cookie_parser = require('cookie-parser');
+
+app.use(cookie_parser());
 
 app.get("/", function (request, response) {
     "use strict";
@@ -15,6 +18,14 @@ app.get("/", function (request, response) {
 
 app.get("/_/msg", function (request, response) {
     "use strict";
+    response.send("Receive your outstanding messages from here.");
+});
+
+app.get("/dev/db", function (request, response) {
+    "use strict";
+    console.log(request.headers["cache-control"]);
+    database.rt.set('KIK', 'Values');
+    database.rt.expire('KIK', 60);
     response.send("Receive your outstanding messages from here.");
 });
 
