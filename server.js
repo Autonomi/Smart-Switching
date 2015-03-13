@@ -8,18 +8,15 @@ var express = require('express'),
     database = require('./model/database'),
     config = require('./config');
 
-
 app.get("/", function (request, response) {
     "use strict";
     response.send("API Root.");
 });
 
-
 app.get("/_/msg", function (request, response) {
     "use strict";
     response.send("Receive your outstanding messages from here.");
 });
-
 
 var server = app.listen(config.PORT, config.HOST, function () {
     "use strict";
