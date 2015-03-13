@@ -5,7 +5,8 @@ var express = require('express'),
     app = express(),
     device = require('./model/device'),
     util = require('./model/util'),
-    config = require('./model/config');
+    database = require('./model/database'),
+    config = require('./config');
 
 
 app.get("/", function (request, response) {
@@ -16,15 +17,11 @@ app.get("/", function (request, response) {
 
 app.get("/_/msg", function (request, response) {
     "use strict";
-    console.log(util.hash.generate("test"));
-    response.send("Recieve your outstanding messages from here.");
+    response.send("Receive your outstanding messages from here.");
 });
 
 
-var server = app.listen(config.port, config.ip, function () {
+var server = app.listen(config.PORT, config.HOST, function () {
     "use strict";
-    var host = server.address().address,
-        port = server.address().port;
-
-    console.log('Example app listening at http://%s:%s', host, port);
+    console.log('Listening at http://%s:%s', config.HOST, config.PORT);
 });
