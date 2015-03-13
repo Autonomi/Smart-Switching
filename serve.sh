@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export OPENSHIFT_NODEJS_PORT=1337
+export OPENSHIFT_NODEJS_PORT="1337"
 export OPENSHIFT_NODEJS_IP="0.0.0.0"
 
 export OPENSHIFT_REDIS_HOST="localhost"
