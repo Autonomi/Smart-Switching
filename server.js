@@ -13,8 +13,14 @@ app.use(cookie_parser());
 
 app.get("/", function (request, response) {
     "use strict";
-    response.send("API Root.");
+    response.send("APIRoot.");
 });
+
+app.route("/_/:device_id/*")
+    .get(function (req, res) {
+        "use strict";
+        res.send("Recieve messages for " + JSON.stringify(req.params));
+    });
 
 app.get("/_/msg", function (request, response) {
     "use strict";
@@ -24,7 +30,7 @@ app.get("/_/msg", function (request, response) {
 app.get("/dev/db", function (request, response) {
     "use strict";
     console.log(request.headers["cache-control"]);
-    database.rt.set('KIK', 'Values');
+    database.rt.hmset('KIK', {"LOL": "LOL", "LOL2": 45});
     database.rt.expire('KIK', 60);
     response.send("Receive your outstanding messages from here.");
 });

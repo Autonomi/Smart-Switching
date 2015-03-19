@@ -7,6 +7,7 @@
     "express": ">= 4.4.4",
     "hiredis": "^0.2.0",
     "mongodb": ">= ~2.0",
+    "node-uuid": "^1.4.3",
     "redis": "^0.12.1",
     "siphash": ">= 1.0.1"
   },

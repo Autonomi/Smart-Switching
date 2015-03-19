@@ -21,7 +21,7 @@ The server deletes the returned messages from its hold, unless a special acknowl
 
 #### Request
 ```
-GET /dev/msg
+GET /_/<32 bit device ID>/
 headers: {
     dev: <32 bit device ID>,
     lim: <8 bit unsigned integer>,

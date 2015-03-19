@@ -17,4 +17,18 @@ export EMAIL_SMTP=""
 export EMAIL_USER=""
 export EMAIL_PSWD=""
 
+sudo redis-server&
+sudo mongod --fork --syslog
+
+trap ctrl_c INT
+
+function ctrl_c() {
+    let pid_redis=$(ps aux | grep "redis-server" | grep -v "grep" | awk '{ print $2 }')
+    let pid_mongo=$(ps aux | grep "mongod" | grep -v "grep" | awk '{ print $2 }')
+    sudo kill $pid_redis
+    sudo kill $pid_mongo
+    echo "Killed Redis and Mongo. Exiting."
+}
+
+clear
 nodemon server.js
